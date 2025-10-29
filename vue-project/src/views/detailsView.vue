@@ -1,6 +1,6 @@
 <template>
   <div class="min-h-screen  py-8" dir="rtl">
-          <div class="flex items-center font-light text-sm gap-2 mb-5 text-gray-300">
+          <div class="flex items-center font-light text-sm gap-2 mb-5 text-gray-500">
         <div class="flex items-center gap-1">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 mb-1">
   <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
@@ -145,7 +145,7 @@
             <!-- Product Title -->
             <div>
               <h1 class="text-2xl font-bold mb-2">{{ product.title }}</h1>
-              <p class="text-gray-500 text-sm">{{ product.title_en || 'Apple iPhone 16 CH Dual SIM Storage 128GB And RAM 8GB Mobile Phone' }}</p>
+              <p class="text-gray-500 text-sm">{{product.description}}</p>
             </div>
 
             <!-- Rating & Reviews -->
@@ -275,14 +275,35 @@
             </div>
          </div>   
     </div>
+
+
+
+    <pageTitle :title1="'مرتبط'" :title2="'محصولات'" :about="'جدیدترین و بروز ترین محصولات'" :svgCode="'M3.75 6A2.25 2.25 0 0 1 6 3.75h2.25A2.25 2.25 0 0 1 10.5 6v2.25a2.25 2.25 0 0 1-2.25 2.25H6a2.25 2.25 0 0 1-2.25-2.25V6ZM3.75 15.75A2.25 2.25 0 0 1 6 13.5h2.25a2.25 2.25 0 0 1 2.25 2.25V18a2.25 2.25 0 0 1-2.25 2.25H6A2.25 2.25 0 0 1 3.75 18v-2.25ZM13.5 6a2.25 2.25 0 0 1 2.25-2.25H18A2.25 2.25 0 0 1 20.25 6v2.25A2.25 2.25 0 0 1 18 10.5h-2.25a2.25 2.25 0 0 1-2.25-2.25V6ZM13.5 15.75a2.25 2.25 0 0 1 2.25-2.25H18a2.25 2.25 0 0 1 2.25 2.25V18A2.25 2.25 0 0 1 18 20.25h-2.25A2.25 2.25 0 0 1 13.5 18v-2.25Z'"></pageTitle>
+<div class=" py-8">
+
+          <div class="my-4 "> 
+            <cardSlider2 :products="products" :compact="true"></cardSlider2>
+          </div>
+  </div>
+
   </div>
 </template>
 
 <script>
 import { cartStore } from '../stores/cart.js'
+import pageTitle from '@/components/pageTitle.vue';
+
+import cardSlider2 from '@/components/cardSlider2.vue';
+
+
+
 
 export default {
   name: 'DetailsView',
+  components:{
+    pageTitle,
+    cardSlider2,
+  },
   props: {
     id: {
       type: [String, Number],
@@ -291,6 +312,7 @@ export default {
   },
   data() {
     return {
+      products: [],
       product: null,
       loading: true,
       error: null,
@@ -311,6 +333,12 @@ export default {
   computed: {
     totalPrice() {
       return this.product ? this.product.price_with_discount * this.quantity : 0
+    },
+    discountedProducts() {
+      return this.products.filter(product => product.price_with_discount < product.price).length
+    },
+    lowStockProducts() {
+      return this.products.filter(product => product.quantity <= 3).length
     }
   },
   mounted() {
@@ -331,6 +359,9 @@ export default {
         console.log('Response status:', response.status)
         const data = await response.json()
         console.log('Response data:', data)
+        const response2 = await this.axios.get('http://127.0.0.1:3000/api/products')
+        this.products = response2.data
+        console.log('Products loaded:', this.products)
         
         if (response.ok) {
           this.product = data
@@ -369,7 +400,8 @@ export default {
         console.log('Product added to cart:', this.product.title, 'Quantity:', this.quantity)
       }
     },
-    // 🎨 انتخاب رنگ
+
+    //choosing color
     selectColor(color) {
       this.selectedColor = color.value
       this.selectedColorName = color.name
@@ -385,4 +417,3 @@ export default {
   max-width: 1200px;
 }
 </style>
-

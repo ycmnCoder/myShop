@@ -86,7 +86,7 @@
   <div
     tabindex="0"
     role="button"
-    class="flex items-center gap-1 border border-info rounded-full p-2 px-3.5 cursor-pointer transition-colors bg-base-200 duration-300 hover:bg-gray-50"
+    class="flex items-center gap-1 border border-info rounded-full p-2 px-3.5 cursor-pointer transition-colors bg-base-200 duration-300 "
   >
     <svg xmlns="http://www.w3.org/2000/svg" fill="none"
       viewBox="0 0 24 24" stroke-width="1.5"
@@ -108,7 +108,7 @@
       isDark ? 'bg-base-300 text-white' : 'bg-base-100 text-black'
     ]"
   >
-    <li><a class="hover:bg-primary hover:text-white transition-colors duration-200 text-base font-light"> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 ">
+    <li><a class="hover:bg-primary hover:text-white transition-colors duration-200 "> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5 ">
   <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
 </svg>سفارشات من </a>
 </li>
@@ -301,7 +301,7 @@
   <div
     tabindex="-1"
     :class="[
-      'dropdown-content menu rounded-box z-[9999] p-0 shadow-sm opacity-0 translate-y-5 scale-95 transition-all duration-300 ease-in-out pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 group-hover:pointer-events-auto right-0 translate-x-1/24 mt-6 flex h-[400px] w-[900px]',
+      'dropdown-content absolute right-0 rounded-box z-[9999] p-0 border-0 shadow-none opacity-0 translate-y-5 scale-95 transition-all duration-300 ease-in-out pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 group-hover:pointer-events-auto translate-x-0 mt-6 flex h-[380px] w-[850px]',
       isDark ? 'bg-base-300 text-white' : 'bg-base-100 text-black'
     ]"
     @mouseenter="hoveredCategory = null"
@@ -317,21 +317,24 @@
           @mouseenter="hoveredCategory = category.id"
         >
         
-          <span class=" font-base">{{ category.name }}</span>
+          <span class="font-base">{{ category.name }}</span>
         </li>
       </ul>
     </div>
 
     <!-- Subcategories Panel -->
     <div v-if="hoveredCategory" class="flex-1 p-4">
-      <a href="http://localhost:5173/shop" class="text-blue-600 text-sm mb-3 block">مشاهده همه</a>
-      <div class="grid grid-cols-3 gap-6">
+      <a href="http://localhost:5173/shop" class="text-blue-600 text-sm mb-3 flex items-center gap-1">مشاهده همه <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+</svg>
+</a>
+      <div class="grid grid-cols-3 gap-0 w-full place-items-stretch ">
         <!-- Brands Column -->
         <div class="">
           
           <h4 class="font-semibold text-gray-900 mb-3">برندهای مختلف</h4>
           
-          <ul class="space-y-1">
+          <ul class="space-y-1 ">
             <li v-for="brand in getCurrentCategory().subcategories.brands" :key="brand" class="text-base text-gray-400 hover:text-gray-700  cursor-pointer">
               {{ brand }}
             </li>
@@ -339,9 +342,9 @@
         </div>
 
         <!-- Price Column -->
-        <div>
+        <div class="">
           <h4 class="font-semibold text-gray-900 mb-3">{{ getCurrentCategory().name }} بر اساس قیمت</h4>
-          <ul class="space-y-1">
+          <ul class="space-y-1 ">
             <li v-for="price in getCurrentCategory().subcategories.price" :key="price" class="text-base text-gray-400 hover:text-gray-700 cursor-pointer">
               {{ price }}
             </li>
@@ -349,9 +352,9 @@
         </div>
 
         <!-- Accessories Column -->
-        <div>
+        <div class="">
           <h4 class="font-semibold text-gray-900 mb-3">لوازم جانبی {{ getCurrentCategory().name }}</h4>
-          <ul class="space-y-1">
+          <ul class="space-y-1 w-full">
             <li v-for="accessory in getCurrentCategory().subcategories.accessories" :key="accessory" class="text-base text-gray-400 hover:text-gray-700 cursor-pointer">
               {{ accessory }}
             </li>
@@ -370,7 +373,7 @@
   <div
     tabindex="0"
     role="button"
-    class="flex items-center gap-1 transition-colors duration-300 group"
+    class="flex items-center gap-1 transition-colors duration-300 "
   >
       <div class="font-light">منوی ساده</div>
 
@@ -387,25 +390,29 @@
   <ul
     tabindex="-1"
     :class="[
-      'dropdown-content menu rounded-box z-[9999] w-52 p-2 shadow-sm opacity-0 translate-y-5 scale-95 transition-all duration-500 ease-in-out pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 group-hover:pointer-events-auto left-0 -translate-x-1/2 mt-8 flex justify-center',
+      'dropdown-content menu rounded-box z-[9999] w-52 p-2 shadow-sm opacity-0 translate-y-5 scale-95 transition-all duration-400 ease-in-out pointer-events-none group-hover:opacity-100 group-hover:translate-y-0 group-hover:scale-100 group-hover:pointer-events-auto left-0 -translate-x-1/2 mt-8 flex justify-center',
       isDark ? 'bg-base-300 text-white' : 'bg-base-100 text-black'
     ]"
   >
-    <li><a class="hover:bg-primary hover:text-white transition-colors duration-200 text-base font-light">درباره ما</a>
+    <li><a class="hover:bg-primary hover:text-white transition-colors duration-200 ">درباره ما</a>
 </li>
     <li><a class="hover:bg-primary hover:text-white transition-colors duration-200">
 سوالات متداول</a></li>
     <li><a class="hover:bg-primary hover:text-white transition-colors duration-200">
 تماس با ما</a></li>
     <li><div class="dropdown dropdown-hover dropdown-right hover:bg-primary hover:text-white transition-colors ">
-  <a  tabindex="0" class="">
-صفحات</a>
-  <ul tabindex="-1" :class="['dropdown-content menu rounded-box z-[9999] w-52 p-2 shadow-sm -top-10', isDark ? 'bg-base-300 text-white' : 'bg-base-100 text-black']">
-    <li><a  class="hover:bg-primary hover:text-white transition-colors">فروشگاه</a></li>
-    <li><a  class="hover:bg-primary hover:text-white transition-colors">جزئیات محصول</a></li>
-        <li><a  class="hover:bg-primary hover:text-white transition-colors">پنل کاربری</a></li>
-    <li><a  class="hover:bg-primary hover:text-white transition-colors">سبد خرید</a></li>
-    <li><a  class="hover:bg-primary hover:text-white transition-colors">صفحه ورود</a></li>
+      <div class="flex justify-between items-center">
+        <a  tabindex="0" class="">صفحات</a>
+         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+</svg>
+ </div>
+  <ul tabindex="-1" :class="['dropdown-content duration-400 ease-in-out menu rounded-box z-[9999] w-52 p-2 shadow-sm -translate-y-13 right-47', isDark ? 'bg-base-300 text-white' : 'bg-base-100 text-black']">
+    <li><a  class="hover:bg-primary hover:text-white transition-colors  duration-200">فروشگاه</a></li>
+    <li><a  class="hover:bg-primary hover:text-white transition-colors duration-200">جزئیات محصول</a></li>
+        <li><a  class="hover:bg-primary hover:text-white transition-colors duration-200">پنل کاربری</a></li>
+    <li><a  class="hover:bg-primary hover:text-white transition-colors duration-200">سبد خرید</a></li>
+    <li><a  class="hover:bg-primary hover:text-white transition-colors duration-200">صفحه ورود</a></li>
 
   </ul>
 </div></li>
@@ -556,7 +563,7 @@ export default {
           icon: 'M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3',
           subcategories: {
             brands: ['گوشی آیفون', 'گوشی سامسونگ', 'گوشی هواووی', 'گوشی شیامی', 'گوشی نوکیا', 'گوشی آنر'],
-            price: ['گوشی ارزان', 'گوشی موبایل قسطی', 'گوشی تا ۲ میلیون تومان', 'گوشی تا ۵ میلیون تومان', 'گوشی تا ۷ میلیون تومان', 'گوشی تا ۱۵ میلیون تومان', 'گوشی بالای ۱۵ میلیون تومان'],
+            price: ['گوشی ارزان', 'گوشی موبایل قسطی', 'گوشی تا ۲ میلیون ', 'گوشی تا ۵ میلیون ', 'گوشی تا ۷ میلیون ', 'گوشی تا ۱۵ میلیون ', 'گوشی بالای ۱۵ میلیون '],
             accessories: ['شارژر گوشی', 'شارژر وایرلس', 'قاب و کاور گوشی', 'گلس گوشی', 'هولدر گوشی موبایل', 'کابل شارژ و مبدل', 'پاوربانک (شارژر همراه)']
           }
         },
@@ -566,7 +573,7 @@ export default {
           icon: 'M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25',
           subcategories: {
             brands: ['لپتاپ ایسوس', 'لپتاپ لنوو', 'لپتاپ اچ پی', 'لپتاپ دل', 'لپتاپ اپل', 'لپتاپ سامسونگ'],
-            price: ['لپتاپ ارزان', 'لپتاپ تا ۱۰ میلیون تومان', 'لپتاپ تا ۲۰ میلیون تومان', 'لپتاپ تا ۳۰ میلیون تومان', 'لپتاپ بالای ۳۰ میلیون تومان'],
+            price: ['لپتاپ ارزان', 'لپتاپ تا ۱۰ میلیون ', 'لپتاپ تا ۲۰ میلیون ', 'لپتاپ تا ۳۰ میلیون ', 'لپتاپ بالای ۳۰ میلیون '],
             accessories: ['کیبورد لپتاپ', 'ماوس لپتاپ', 'کیف لپتاپ', 'کول پد لپتاپ', 'شارژر لپتاپ', 'هارد اکسترنال']
           }
         },
@@ -576,7 +583,7 @@ export default {
           icon: 'M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3',
           subcategories: {
             brands: ['تبلت آیپد', 'تبلت سامسونگ', 'تبلت هواووی', 'تبلت شیامی', 'تبلت لنوو'],
-            price: ['تبلت ارزان', 'تبلت تا ۵ میلیون تومان', 'تبلت تا ۱۰ میلیون تومان', 'تبلت تا ۱۵ میلیون تومان', 'تبلت بالای ۱۵ میلیون تومان'],
+            price: ['تبلت ارزان', 'تبلت تا ۵ میلیون ', 'تبلت تا ۱۰ میلیون ', 'تبلت تا ۱۵ میلیون ', 'تبلت بالای ۱۵ میلیون '],
             accessories: ['کیف تبلت', 'قلم تبلت', 'شارژر تبلت', 'کابل تبلت', 'هولدر تبلت']
           }
         },
@@ -586,14 +593,14 @@ export default {
           icon: 'M12 18.75a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75a2.25 2.25 0 0 1-2.25 2.25h-3a2.25 2.25 0 0 1-2.25-2.25V18.75m6 0a6 6 0 0 0 6-6v-1.5m-6 7.5a6 6 0 0 1-6-6v-1.5m6 7.5v3.75a2.25 2.25 0 0 1-2.25 2.25h-3a2.25 2.25 0 0 1-2.25-2.25V18.75',
           subcategories: {
             brands: ['هدفون اپل', 'هدفون سونی', 'هدفون بوز', 'هدفون سامسونگ', 'هدفون هواووی'],
-            price: ['هدفون ارزان', 'هدفون تا ۱ میلیون تومان', 'هدفون تا ۳ میلیون تومان', 'هدفون تا ۵ میلیون تومان', 'هدفون بالای ۵ میلیون تومان'],
+            price: ['هدفون ارزان', 'هدفون تا ۱ میلیون ', 'هدفون تا ۳ میلیون ', 'هدفون تا ۵ میلیون ', 'هدفون بالای ۵ میلیون '],
             accessories: ['کیف هدفون', 'کابل هدفون', 'آداپتور هدفون', 'پد هدفون']
           }
         },
         {
           id: 'discount',
           name: 'تخفیف',
-          icon: 'M9.568 3H5.25A2.25 2.25 0 0 0 3 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 0 0 5.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 0 0 9.568 3Z',
+          icon: '',
           subcategories: {
             brands: ['تخفیف ویژه', 'فروش ویژه', 'پیشنهاد ویژه'],
             price: ['تخفیف تا ۵۰٪', 'تخفیف تا ۷۰٪', 'تخفیف بالای ۷۰٪'],
@@ -606,7 +613,7 @@ export default {
           icon: 'M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25m18 0A2.25 2.25 0 0 0 18.75 3H5.25A2.25 2.25 0 0 0 3 5.25m18 0V12a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 12V5.25',
           subcategories: {
             brands: ['کامپیوتر ایسوس', 'کامپیوتر لنوو', 'کامپیوتر اچ پی', 'کامپیوتر دل'],
-            price: ['کامپیوتر ارزان', 'کامپیوتر تا ۱۵ میلیون تومان', 'کامپیوتر تا ۲۵ میلیون تومان', 'کامپیوتر بالای ۲۵ میلیون تومان'],
+            price: ['کامپیوتر ارزان', 'کامپیوتر تا ۱۵ میلیون ', 'کامپیوتر تا ۲۵ میلیون ', 'کامپیوتر بالای ۲۵ میلیون '],
             accessories: ['مانیتور', 'کیبورد', 'ماوس', 'اسپیکر', 'وب کم', 'هارد']
           }
         }
@@ -667,3 +674,4 @@ export default {
 import { ref } from "vue";
 const isOpen = ref(false);
 </script>
+

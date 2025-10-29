@@ -3,13 +3,13 @@
 
 
     <!-- Custom navigation buttons -->
-    <button class="nav-next absolute -left-3 md:-left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-xl bg-base-200 shadow  flex items-center justify-center hover:bg-blue-50">
+    <button class="nav-next absolute -left-3 ml-4 lg:ml-0 md:-left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-xl bg-base-200 shadow  flex items-center justify-center hover:text-blue-500">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
 </svg>
 
     </button>
-    <button class="nav-prev absolute -right-3 md:-right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-xl bg-base-200 shadow  flex items-center justify-center hover:bg-blue-50">
+    <button class="nav-prev absolute -right-3 mr-4 lg:mr-0 md:-right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-xl bg-base-200 shadow  flex items-center justify-center hover:text-blue-500">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
 </svg>

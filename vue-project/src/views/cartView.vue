@@ -1,7 +1,7 @@
 <template>
   <div class=" py-8 " dir="rtl">
     <!-- Breadcrumb -->
-        <div class="flex items-center font-light text-sm gap-2 mb-5 text-gray-300">
+        <div class="flex items-center font-light text-sm gap-2 mb-5 text-gray-500">
         <div class="flex items-center gap-1">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4 mb-1">
   <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
@@ -57,42 +57,56 @@
             <div 
               v-for="item in cartStore.getState().items" 
               :key="item.id"
-              class="bg-white rounded-lg p-6 shadow-sm border border-gray-200"
+              class="bg-base-200 rounded-lg p-6 shadow-sm"
             >
               <div class="flex items-start gap-4">
                 <!-- Product Image -->
-                <div class="w-24 h-24 bg-gray-100 rounded-lg overflow-hidden flex-shrink-0">
+                <div class="w-40 h-40 rounded-lg overflow-hidden flex-shrink-0">
                   <img
                     :src="getImageUrl(item.images[0])"
                     :alt="item.title"
                     class="w-full h-full object-contain"
                     @error="handleImageError"
                   />
+                  
                 </div>
+
+                
 
                 <!-- Product Details -->
                 <div class="flex-1 min-w-0">
-                  <h3 class="text-lg font-medium text-gray-900 mb-2">{{ item.title }}</h3>
+                  <div class="flex items-center justify-between mb-2">
+                    
+                    <h3 class="text-lg font-medium ">{{ item.title }}</h3>
+                    <button 
+                      @click="cartStore.removeItem(item.id)"
+                      class="text-red-600 hover:text-red-700 transition-colors"
+                    >
+                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                      </svg>
+                    </button>
                   
+                  </div>
                   <!-- Color Selection -->
                   <div class="flex items-center gap-2 mb-3">
-                    <span class="text-sm text-gray-600">رنگ:</span>
+      
                     <div class="flex items-center gap-2">
-                      <div class="w-4 h-4 rounded-full bg-blue-500 border-2 border-white shadow-sm"></div>
-                      <span class="text-sm text-gray-700">آبی</span>
+                      <div class="w-5 h-5 rounded-full bg-blue-500 shadow-sm"></div>
+                      <span class="text-sm text-gray-400">آبی</span>
                     </div>
                   </div>
 
                   <!-- Features -->
-                  <div class="flex items-center gap-4 mb-4">
-                    <div class="flex items-center gap-1 text-green-600">
+                  <div class="flex flex-col gap-4 mb-4">
+                    <div class="flex items-center gap-1 text-gray-400">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
   <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
 </svg>
 
                       <span class="text-sm">گارانتی ۱۸ ماهه</span>
                     </div>
-                    <div class="flex items-center gap-1 text-blue-600">
+                    <div class="flex items-center gap-1 text-gray-400">
                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
   <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 0 1-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 0 1-3 0m3 0a1.5 1.5 0 0 0-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 0 0-3.213-9.193 2.056 2.056 0 0 0-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 0 0-10.026 0 1.106 1.106 0 0 0-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
 </svg>
@@ -102,40 +116,32 @@
                   </div>
 
                   <!-- Price -->
-                  <div class="text-xl font-bold text-gray-900 mb-4">
+                  <div class="text-xl font-bold mb-4">
                     {{ formatPrice(item.price_with_discount) }} تومان
                   </div>
-
-                  <!-- Quantity Control -->
+     <!-- Quantity Control -->
                   <div class="flex items-center gap-3">
-                    <div class="flex items-center border border-gray-300 rounded-lg">
-                      <button 
-                        @click="cartStore.updateQuantity(item.id, item.quantity - 1)"
-                        class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 transition-colors"
-                      >
-                        -
-                      </button>
-                      <span class="w-12 text-center font-medium">{{ item.quantity }}</span>
-                      <button 
+                    <div class="flex items-center border border-info rounded-lg">
+                     <button 
                         @click="cartStore.updateQuantity(item.id, item.quantity + 1)"
-                        class="w-8 h-8 flex items-center justify-center hover:bg-gray-100 transition-colors"
+                        class="w-8 h-8 flex items-center justify-center text-green-500"
                       >
                         +
+                      </button>
+                      <span class="w-12 text-center font-medium">{{ item.quantity }}</span>
+                       <button 
+                        @click="cartStore.updateQuantity(item.id, item.quantity - 1)"
+                        class="w-8 h-8 flex items-center justify-center text-red-500"
+                      >
+                        -
                       </button>
                     </div>
                   </div>
 
                   <!-- Actions -->
                   <div class="flex items-center gap-4 mt-4">
-                    <button 
-                      @click="cartStore.removeItem(item.id)"
-                      class="text-red-600 hover:text-red-700 transition-colors"
-                    >
-                      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                      </svg>
-                    </button>
-                    <a href="#" class="text-blue-600 hover:text-blue-700 text-sm">
+                 
+                    <a href="#" class="text-blue-500 hover:text-blue-600 text-sm">
                       افزودن به خرید بعدی >
                     </a>
                   </div>
@@ -147,8 +153,8 @@
 
         <!-- Order Summary  -->
         <div class="lg:col-span-1">
-          <div class="bg-white rounded-lg p-6 shadow-sm border border-gray-200 sticky top-4">
-            <h2 class="text-lg font-semibold text-gray-900 mb-4">
+          <div class="bg-base-200 rounded-lg p-6 shadow-sm sticky top-4">
+            <h2 class="text-lg font-semibold  mb-4">
               قیمت کالاها ({{ cartStore.getTotalItems() }})
             </h2>
 
@@ -160,14 +166,14 @@
               
               <div class="flex justify-between text-green-600">
                 <span>تخفیف:</span>
-                <span>{{ formatPrice(500000) }} تومان</span>
+                <span>{{ formatPrice(0) }} تومان</span>
               </div>
               
               <hr class="border-dashed border-gray-300">
               
               <div class="flex justify-between text-lg font-bold">
                 <span>مبلغ نهایی:</span>
-                <span class="text-blue-600">{{ formatPrice(cartStore.getTotalPrice() - 500000) }} تومان</span>
+                <span class="text-blue-600">{{ formatPrice(cartStore.getTotalPrice() - 0) }} تومان</span>
               </div>
             </div>
 

@@ -1,6 +1,6 @@
 <template>
   <div 
-    class="relative bg-base-200 rounded-xl shadow-lg w-[320px] h-[384px] flex flex-col p-5 font-dana overflow-hidden cursor-pointer hover:shadow-xl transition-shadow duration-300" 
+    class="relative bg-base-200 rounded-xl shadow-lg w-[320px] h-[384px] flex flex-col p-5 font-dana  cursor-pointer hover:shadow-xl transition-shadow duration-300" 
     dir="rtl"
     @click="navigateToProduct"
   >
@@ -15,22 +15,30 @@
 
   
     <div class="absolute top-4 right-4 flex gap-2 z-10">
-      <button @click.stop="addToCart" class="w-8 h-8 border border-info rounded-full bg-base-200 flex items-center justify-center hover:bg-gray-50 hover:border-gray-400 transition-all">
+
+      <div class="tooltip tooltip-primary" data-tip="سبد خرید">
+      <button @click.stop="addToCart" class="w-8 h-8 border border-info rounded-full bg-base-200 flex items-center justify-center hover:opacity-75 hover:border-gray-400 transition-all">
        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 ">
   <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
 </svg>
       </button>
-      <button @click.stop="toggleFavorite" class="w-8 h-8 border border-info rounded-full bg-base-200 flex items-center justify-center hover:bg-gray-50 hover:border-gray-400 transition-all">
+    </div>
+<div class="tooltip tooltip-primary" data-tip="علاقه مندی">
+      <button @click.stop="toggleFavorite" class="w-8 h-8 border border-info rounded-full bg-base-200 flex items-center justify-center hover:opacity-75 hover:border-gray-400 transition-all">
         <svg class="w-4 h-4 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
         </svg>
       </button>
-      <button @click.stop="compareProduct" class="w-8 h-8 border border-info rounded-full bg-base-200 flex items-center justify-center hover:bg-gray-50 hover:border-gray-400 transition-all">
+</div>
+
+      <div class="tooltip tooltip-primary" data-tip="مقایسه">
+      <button @click.stop="compareProduct" class="w-8 h-8 border border-info rounded-full bg-base-200 flex items-center justify-center hover:opacity-75 hover:border-gray-400 transition-all">
         <svg class="w-4 h-4 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16V4m0 0L3 8m4-4l4 4m6 0v12m0 0l4-4m-4 4l-4-4"></path>
         </svg>
 
       </button>
+      </div>
     </div>
 
     <!-- Product Image -->
@@ -121,11 +129,23 @@ export default {
       
       event.target.src = 'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjNmNGY2Ii8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxNCIgZmlsbD0iIzk5YTNhZiIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIG5vdCBmb3VuZDwvdGV4dD48L3N2Zz4=';
     },
-    navigateToProduct() {
+navigateToProduct() {
+  const newId = this.product.id;
+  const currentId = this.$route.params.id;
 
-      console.log('Navigating to product:', this.product.id)
-      this.$router.push({ name: 'product-details', params: { id: this.product.id } });
-    },
+ 
+  if (this.$route.name === 'product-details' && currentId !== String(newId)) {
+   
+    this.$router.push({ name: 'product-details', params: { id: newId } }).then(() => {
+      this.$router.go(0);
+    });
+  } 
+  else {
+    
+    this.$router.push({ name: 'product-details', params: { id: newId } });
+  }
+}
+,
     addToCart() {
 
       this.cartStore.addItem(this.product, 1)

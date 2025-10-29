@@ -1,80 +1,80 @@
 [
-    {
-        "id": 1,
-        "title":"لپ تاپ ایسوس",
-        "category": "Laptops",
-        "price": 1199.00,
-        "price_with_discount": 1099.00,
-        "quantity": 5,
-        "images": [
-            "/images/vivo1.png",
-            "/images/VIVO2.png"
-        ],
-        "description": "The latest iPhone 15 Pro with A17 Pro chip. \nExperience professional-grade photography and performance."
-    },
-    {
-        "id": 2,
-        "title": "هدفون سونی WH-1000XM5",
-        "category": "Audio",
-        "price": 399.00,
-        "price_with_discount": 349.00,
-        "quantity": 8,
-        "images": [
-            "/images/green1.webp",
-            "/images/PURPLE.webp"
-        ],
-        "description": "Industry-leading noise cancellation headphones. \nCrystal-clear sound with up to 30 hours of battery life."
-    },
-    {
-        "id": 3,
-        "title": "کفش ورزشی نایک ایر مکس ۲۷۰",
-        "category": "Fashion",
-        "price": 160.00,
-        "price_with_discount": 32,
-        "quantity": 0,
-        "images": [
-            "/images/TUF1.webp",
-            "/images/TUF2.webp"
-        ],
-        "description": "Stylish sneakers with lightweight cushioning. \nPerfect for sports, casual wear, and everyday comfort."
-    },
-    {
-        "id": 4,
-        "title": "تلویزیون سامسونگ ۵۵ اینچ ۴کی QLED",
-        "category": "Home Entertainment",
-        "price": 899.00,
-        "price_with_discount": 799.00,
-        "quantity": 3,
-        "images": [
-            "/images/XPG1.png",
-            "/images/XPG2.png"
-        ],
-        "description": "Immersive 4K resolution with vibrant colors. \nSmart TV features with voice assistant integration."
-    },
-    {
-        "id": 5,
-        "title": "نوتلا ۷۵۰ گرمی",
-        "category": "Groceries",
-        "price": 9.50,
-        "price_with_discount": 7.99,
-        "quantity": 10,
-        "images": [
-           "/images/green1.webp",
-            "/images/PURPLE.webp"
-        ],
-        "description": "Creamy hazelnut spread loved worldwide. \nPerfect for breakfast, baking, or sweet treats."
-    },
-    {
-        "id": 6,
-        "title": "ماوس لاجیتک MX Master 3S",
-        "category": "Accessories",
-        "price": 129.99,
-        "price_with_discount": 99.99,
-        "quantity": 7,
-        "images": [
-            "/images/green1.webp",
-            "/images/PURPLE.webp"
-        ],
-        "description": "Advanced wireless mouse with fast scrolling. \nDesigned for productivity and comfort all day."
-    }
+  {
+    "id": 1,
+    "title": "لپ تاپ ایسوس",
+    "category": "Laptops",
+    "price": 58000000,
+    "price_with_discount": 54500000,
+    "quantity": 5,
+    "images": [
+      "/images/vivo1.png",
+      "/images/VIVO2.png"
+    ],
+    "description": "لپ‌تاپ ایسوس با پردازنده قدرتمند Core i7 و کارت گرافیک RTX، مناسب برای برنامه‌نویسی، طراحی و بازی‌های سنگین."
+  },
+  {
+    "id": 2,
+    "title": "مک بوک پرو 17 اینچ",
+    "category": "Laptops",
+    "price": 125000000,
+    "price_with_discount": 112000000,
+    "quantity": 8,
+    "images": [
+      "/images/green1.webp",
+      "/images/PURPLE.webp"
+    ],
+    "description": "مک‌بوک پرو 17 اینچ با تراشه M3 Pro، نمایشگر Retina با وضوح بالا و عمر باتری طولانی برای حرفه‌ای‌ها."
+  },
+  {
+    "id": 3,
+    "title": "لپ تاپ TUF ایسوس",
+    "category": "Laptops",
+    "price": 72000000,
+    "price_with_discount": 66500000,
+    "quantity": 0,
+    "images": [
+      "/images/TUF1.webp",
+      "/images/TUF2.webp"
+    ],
+    "description": "سری گیمینگ TUF ایسوس با پردازنده Ryzen 7 و گرافیک RTX 4060، طراحی مقاوم و سیستم خنک‌کنندگی پیشرفته."
+  },
+  {
+    "id": 4,
+    "title": "لپ تاپ ایکس پی جی",
+    "category": "Laptops",
+    "price": 68000000,
+    "price_with_discount": 63000000,
+    "quantity": 3,
+    "images": [
+      "/images/XPG1.png",
+      "/images/XPG2.png"
+    ],
+    "description": "لپ‌تاپ XPG با طراحی مدرن و عملکرد بالا، مجهز به SSD پرسرعت و نمایشگر با نرخ تازه‌سازی بالا برای کاربران حرفه‌ای."
+  },
+  {
+    "id": 5,
+    "title": "مک بوک ایر 15 اینچ",
+    "category": "Laptops",
+    "price": 95000000,
+    "price_with_discount": 89900000,
+    "quantity": 10,
+    "images": [
+      "/images/green1.webp",
+      "/images/PURPLE.webp"
+    ],
+    "description": "مک‌بوک ایر 15 اینچ با تراشه قدرتمند M2، سبک، بی‌صدا و مناسب برای کارهای روزمره، طراحی و مطالعه."
+  },
+  {
+    "id": 6,
+    "title": "مک بوک پرو اپل 14 اینچ",
+    "category": "Laptops",
+    "price": 115000000,
+    "price_with_discount": 104000000,
+    "quantity": 7,
+    "images": [
+      "/images/green1.webp",
+      "/images/PURPLE.webp"
+    ],
+    "description": "مک‌بوک پرو 14 اینچ اپل با تراشه M3 Max، صفحه‌نمایش Liquid Retina XDR و عملکرد استثنایی برای تولیدکنندگان محتوا."
+  }
 ]
