@@ -42,8 +42,13 @@
         <li><a href="http://localhost:5173/" class="hover:text-blue-500 transition-colors pr-4 ">صفحه اصلی</a></li>
         <li><div tabindex="0" class="collapse collapse-arrow my-0">
   <div class="collapse-title">دسته بندی</div>
-  <div class="collapse-content text-sm">
-    Click the "Sign Up" button in the top right corner and follow the registration process.
+  <div class="collapse-content text-sm flex flex-col gap-y-3 mr-3">
+    <div>موبایل</div>
+    <div>لپ تاپ</div>
+    <div>تبلت</div>
+    <div>هدفون</div>
+    <div>تخفیف</div>
+    <div>کامپیوتر</div>
   </div>
 </div></li>
         <li><a href="http://localhost:5173/shop" class="hover:text-blue-500 transition-colors pr-4">فروشگاه</a></li>
