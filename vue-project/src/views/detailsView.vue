@@ -55,9 +55,9 @@
             <!-- Action Icons -->
              <div class="flex justify-between">
   <nav class="flex items-center space-x-2 text-base text-blue-400">
-            <span>اپل</span>
+            <span>{{ product.category }}</span>
             <span>/</span>
-            <span>گوشی موبایل اپل</span>
+            <span>{{ product.title }}</span>
           </nav>
             <div class="flex justify-end gap-2 mb-4">
               
@@ -185,21 +185,21 @@
             <div>
               <h3 class="text-lg font-semibold  mb-3">ویژگی ها</h3>
               <div class="flex flex-wrap gap-3 text-sm">
-                <div class="flex flex-col gap-y-2 bg-base-100 p-2 rounded-lg w-45 h-15">
+                <div class="flex flex-col gap-y-2 bg-base-100 p-2 rounded-lg w-fit h-15">
                   <span class="text-gray-500">فناوری صفحه نمایش:</span>
-                  <span class="font-semibold">LTPO Super Retina XDR</span>
+                  <span class="font-semibold">{{ product.display_technology}}</span>
                 </div>
                 <div class="flex flex-col gap-y-2 bg-base-100 p-2 rounded-lg w-45 h-15">
                   <span class="text-gray-500">نسخه سیستم عامل:</span>
-                  <span class="font-semibold">iOS 18</span>
+            <span class="font-semibold">{{ product.os_version }}</span>
                 </div>
                 <div class="flex flex-col gap-y-2 bg-base-100 p-2 rounded-lg w-45 h-15">
                   <span class="text-gray-500">رزولوشن دوربین اصلی:</span>
-                  <span class="font-semibold">48 مگاپیکسل</span>
+                <span class="font-semibold">{{ product.camera_resolution }}</span>
                 </div>
                 <div class="flex flex-col gap-y-2 bg-base-100 p-2 rounded-lg w-45 h-15">
                   <span class="text-gray-500">اندازه:</span>
-                  <span class="font-semibold ">6.1</span>
+                  <span class="font-semibold ">{{ product.size }}</span>
                 </div>
               </div>
             </div>

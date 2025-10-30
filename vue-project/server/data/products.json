@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "لپ تاپ ایسوس",
-    "category": "Laptops",
+    "category": "لپ تاپ",
     "price": 58000000,
     "price_with_discount": 54500000,
     "quantity": 5,
@@ -10,12 +10,16 @@
       "/images/vivo1.png",
       "/images/VIVO2.png"
     ],
-    "description": "لپ‌تاپ ایسوس با پردازنده قدرتمند Core i7 و کارت گرافیک RTX، مناسب برای برنامه‌نویسی، طراحی و بازی‌های سنگین."
+    "description": "لپ‌تاپ ایسوس با پردازنده قدرتمند Core i7 و کارت گرافیک RTX، مناسب برای برنامه‌نویسی، طراحی و بازی‌های سنگین.",
+    "os_version": "Windows 11 Home",
+    "display_technology": "IPS LED با نرخ تازه‌سازی 144 هرتز",
+    "camera_resolution": "720p HD",
+    "size": "15.6 اینچ"
   },
   {
     "id": 2,
     "title": "مک بوک پرو 17 اینچ",
-    "category": "Laptops",
+    "category": "لپ تاپ",
     "price": 125000000,
     "price_with_discount": 112000000,
     "quantity": 8,
@@ -23,12 +27,16 @@
       "/images/green1.webp",
       "/images/PURPLE.webp"
     ],
-    "description": "مک‌بوک پرو 17 اینچ با تراشه M3 Pro، نمایشگر Retina با وضوح بالا و عمر باتری طولانی برای حرفه‌ای‌ها."
+    "description": "مک‌بوک پرو 17 اینچ با تراشه M3 Pro، نمایشگر Retina با وضوح بالا و عمر باتری طولانی برای حرفه‌ای‌ها.",
+    "os_version": "macOS Sequoia",
+    "display_technology": "Liquid Retina XDR",
+    "camera_resolution": "1080p FaceTime HD",
+    "size": "17.0 اینچ"
   },
   {
     "id": 3,
     "title": "لپ تاپ TUF ایسوس",
-    "category": "Laptops",
+    "category": "لپ تاپ",
     "price": 72000000,
     "price_with_discount": 66500000,
     "quantity": 0,
@@ -36,12 +44,16 @@
       "/images/TUF1.webp",
       "/images/TUF2.webp"
     ],
-    "description": "سری گیمینگ TUF ایسوس با پردازنده Ryzen 7 و گرافیک RTX 4060، طراحی مقاوم و سیستم خنک‌کنندگی پیشرفته."
+    "description": "سری گیمینگ TUF ایسوس با پردازنده Ryzen 7 و گرافیک RTX 4060، طراحی مقاوم و سیستم خنک‌کنندگی پیشرفته.",
+    "os_version": "Windows 11 Home",
+    "display_technology": "IPS با نرخ تازه‌سازی 165 هرتز",
+    "camera_resolution": "720p HD",
+    "size": "15.6 اینچ"
   },
   {
     "id": 4,
     "title": "لپ تاپ ایکس پی جی",
-    "category": "Laptops",
+    "category": "لپ تاپ",
     "price": 68000000,
     "price_with_discount": 63000000,
     "quantity": 3,
@@ -49,12 +61,16 @@
       "/images/XPG1.png",
       "/images/XPG2.png"
     ],
-    "description": "لپ‌تاپ XPG با طراحی مدرن و عملکرد بالا، مجهز به SSD پرسرعت و نمایشگر با نرخ تازه‌سازی بالا برای کاربران حرفه‌ای."
+    "description": "لپ‌تاپ XPG با طراحی مدرن و عملکرد بالا، مجهز به SSD پرسرعت و نمایشگر با نرخ تازه‌سازی بالا برای کاربران حرفه‌ای.",
+    "os_version": "Windows 11 Pro",
+    "display_technology": "IPS-Level با نرخ تازه‌سازی 240 هرتز",
+    "camera_resolution": "1080p FHD",
+    "size": "15.6 اینچ"
   },
   {
     "id": 5,
     "title": "مک بوک ایر 15 اینچ",
-    "category": "Laptops",
+    "category": "لپ تاپ",
     "price": 95000000,
     "price_with_discount": 89900000,
     "quantity": 10,
@@ -62,12 +78,16 @@
       "/images/green1.webp",
       "/images/PURPLE.webp"
     ],
-    "description": "مک‌بوک ایر 15 اینچ با تراشه قدرتمند M2، سبک، بی‌صدا و مناسب برای کارهای روزمره، طراحی و مطالعه."
+    "description": "مک‌بوک ایر 15 اینچ با تراشه قدرتمند M2، سبک، بی‌صدا و مناسب برای کارهای روزمره، طراحی و مطالعه.",
+    "os_version": "macOS Sequoia",
+    "display_technology": "Liquid Retina",
+    "camera_resolution": "1080p FaceTime HD",
+    "size": "15.3 اینچ"
   },
   {
     "id": 6,
     "title": "مک بوک پرو اپل 14 اینچ",
-    "category": "Laptops",
+    "category": "لپ تاپ",
     "price": 115000000,
     "price_with_discount": 104000000,
     "quantity": 7,
@@ -75,6 +95,10 @@
       "/images/green1.webp",
       "/images/PURPLE.webp"
     ],
-    "description": "مک‌بوک پرو 14 اینچ اپل با تراشه M3 Max، صفحه‌نمایش Liquid Retina XDR و عملکرد استثنایی برای تولیدکنندگان محتوا."
+    "description": "مک‌بوک پرو 14 اینچ اپل با تراشه M3 Max، صفحه‌نمایش Liquid Retina XDR و عملکرد استثنایی برای تولیدکنندگان محتوا.",
+    "os_version": "macOS Sequoia",
+    "display_technology": "Liquid Retina XDR با روشنایی 1600 نیت",
+    "camera_resolution": "1080p FaceTime HD",
+    "size": "14.2 اینچ"
   }
 ]
