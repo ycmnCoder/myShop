@@ -35,7 +35,7 @@ const router = createRouter({
         }
   ],
   scrollBehavior(to, from, savedPosition) {
-    پ
+  
     if (savedPosition) {
       return savedPosition
     } else {
